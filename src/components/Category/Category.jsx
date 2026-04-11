@@ -10,7 +10,7 @@ const Category = () => {
     return (
       // card
       <div
-        className="flex-1 basis-[300px]  hover:shadow-zinc-400 shadow-xl transform transition duration-400 rounded-2xl"
+        className="flex-1 basis-[300px] active:scale-90 active:shadow-zinc-400 duration-200  hover:shadow-zinc-400 shadow-xl transform transition duration-400 rounded-2xl"
         key={card.id}
       >
         {/* card image */}
@@ -24,7 +24,7 @@ const Category = () => {
           <p className="text-zinc-600 mt-3 mb-9 ">{card.discription}</p>
           <Link
             to={card.path}
-            className="bg-orange-400 text-white px-8 py-3 rounded-lg hover:scale-105  hover:bg-orange-600 
+            className="bg-orange-400 text-white px-8 py-3 rounded-lg active:scale-120  active:bg-orange-600  transition-all hover:scale-105  hover:bg-orange-600 
   transition-all md:text-lg text-md duration-300 cursor-pointer"
           >
             See All

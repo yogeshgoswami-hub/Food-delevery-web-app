@@ -4,7 +4,7 @@ import Button from "../Button/Button";
 
 const Cards = ({ image, name, price }) => {
   return (
-    <div className="bg-zinc-100  hover:shadow-lg shadow-zinc-400   transition-all duration-300 md:p-5 rounded-xl mb-9 h-99 md:h-full mr-2 ml-2 ">
+    <div className="bg-zinc-100 active:scale-95 transition-all active:shadow-2xl duration-200 hover:shadow-lg shadow-zinc-400   transition-all duration-300 md:p-5 rounded-xl mb-9 h-99 md:h-full mr-2 ml-2 ">
       {/* Card Icons */}
 
       <div className="flex justify-between">

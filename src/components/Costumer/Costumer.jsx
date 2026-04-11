@@ -22,7 +22,7 @@ const Costumer = () => {
             {cost.map((item, index) => (
               <div
                 key={index}
-                className="bg-zinc-200 p-5 rounded-4xl shadow-lg text-center hover:shadow-zinc-400 duration-400 transition-shadow transform-border h-full w-full md:mb-10 pt-10  "
+                className="bg-zinc-200 p-5 rounded-4xl shadow-lg text-center  active:shadow-zinc-600 shadow-2xl hover:shadow-zinc-400 duration-400 transition-shadow transform-border h-full w-full md:mb-10 pt-10  "
               >
                 <img
                   src={item.image}
