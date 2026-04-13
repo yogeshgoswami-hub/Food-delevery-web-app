@@ -10,7 +10,7 @@ const FAQs = () => {
     };
     return (
       <div
-        className=" h-[50vh] md:w-full md:w-[60vh] mt-25 flex-1 justify-center text-center text-2xl hover:shadow-zinc-400 shadow-xl duration-400 items-center bg-center bg-cover relative"
+        className=" h-[50vh] md:w-full md:w-[60vh] mt-25 flex-1 justify-center text-center text-xl hover:shadow-zinc-400 shadow-xl duration-400 items-center bg-center bg-cover relative"
       >
         <h2 className="bg-zinc-100 text-3xl font-bold p-2  ">FA<span className="text-orange-500">Q</span>s</h2>
 
@@ -30,7 +30,7 @@ const FAQs = () => {
 
             {/* Answer */}
             {openIndex === index && (
-              <div style={{ marginTop: "8px" }}>{item.answer}</div>
+              <div style={{ marginTop: "10px"}}>{item.answer}</div>
             )}
           </div>
         ))}

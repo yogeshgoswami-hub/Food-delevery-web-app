@@ -86,16 +86,16 @@ const Navbar = () => {
               <IoSearchSharp />
             </button>
           </div>
-          <a href="#" className="text-2xl">
+          <Link to="/fav" className="text-2xl">
             <IoHeart />
-          </a>
-          <a href="#" className="text-2xl">
+          </Link>
+          <Link to="/cart" className="text-2xl">
             <HiMiniShoppingBag />
-          </a>
+          </Link>
           {/* profile icon */}
-          <a href="" className="text-2xl hidden md:flex ">
+          <Link to="/signinup" className="text-2xl hidden md:flex ">
             <FaUserCircle />
-          </a>
+          </Link>
 
           {/* hamburger */}
           <a
@@ -144,12 +144,12 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <a
-              href="#"
+            <Link
+              to="/signinup"
               className="font-semibold tracking-wider hover:text-orange-500"
             >
               Sign in/up
-            </a>
+            </Link>
           </li>
           <li className="flex p-1 border-2 border-orange-500 rounded-full md:hidden">
             <input
