@@ -15,10 +15,6 @@ const Costumer = () => {
         <div className="md:mt-10 text-center ">
           <Heading highlight="Customer" heading="Saying" />
         </div>
-
-        <div className="md:mt-10 text-center ">
-          <Heading highlight="Customers" heading="Saying" />
-        </div>
         <div className=" flex justify-end py-6 gap-x-3 ">
           <div className="flex md:flex-row flex-col gap-10 justify-center items-center m-15 ">
             {cost.map((item, index) => (
