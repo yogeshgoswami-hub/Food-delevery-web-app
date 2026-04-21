@@ -10,7 +10,7 @@ const Costumer = () => {
   return (
     <section>
       <div className="max-w-[1400px]  mx-auto py-20  mt-10 ">
-        <div className="md:mt-10 text-center "><Heading highlight="Costumers" heading="Saying"  /></div>
+        <div className="md:mt-10 text-center "><Heading highlight="Customer" heading="Saying"  /></div>
         <div className=" flex justify-end py-6 gap-x-3 ">
           {/* <button className="text-2xl text-zinc-800 rounded-lg w-11 h-11  flex justify-center items-center   cursor-pointer  bg-zinc-100 hover:bg-orange-500 hover:text-white">
             <IoIosArrowBack />
