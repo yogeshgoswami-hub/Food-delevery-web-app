@@ -5,8 +5,8 @@ import { PiGreaterThan } from "react-icons/pi";
 import { Link } from "react-router-dom";
 function Footer() {
   return (
-    <footer className="bg-zinc-100  md:py-15 py-17 ">
-      <div className="max-w-[1400px]  mx-auto md:flex items-center md:justify-around text-start md:m-10 m-15">
+    <footer className="bg-zinc-100  md:py-1 pt-10 ">
+      <div className="max-w-[1400px]  mx-auto md:flex items-center md:justify-around text-start md:m-10 ">
         <div className=" flex-col items-center text-center md:text-start">
           <Link to="/" className="text-3xl font-bold">
             Quick<span className="text-orange-500">B</span>asket
@@ -16,7 +16,7 @@ function Footer() {
             fresh and healthy.
           </p>
           <p className="md:flex flex justify-center md:justify-start font-semibold ">
-            2024<RiCopyrightFill/> Created By 😏Yogesh!. All Right Reaserved
+            {/* 2024<RiCopyrightFill/> Created By 😏Yogesh!. All Right Reaserved */}
           </p>
         </div>
         <div className="justify-center text-center md:text-start m-20">
@@ -63,6 +63,10 @@ function Footer() {
             </button>
           </div>
         </div>
+     
+      </div>
+         <div className="border-t border-gray-700 py-4 mt-10 text-center text-gray-500">
+        Copyright 2026 © Yogesh 💯🔥 All Rights Reserved 🛑
       </div>
     </footer>
   );

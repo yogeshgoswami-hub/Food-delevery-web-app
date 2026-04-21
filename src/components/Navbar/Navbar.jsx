@@ -108,10 +108,16 @@ const Navbar = () => {
         </div>
 
         {/* mobile menu */}
-        <ul
+        <ul    onClick=
+            {() => {
+              toggleMenu(true);
+            }}
           className={`flex flex-col gap-y-12 bg-orange-500/15 backdrop-blur-xl shadow-xl rounded-xl p-10 items-center gap-x-15 md:hidden absolute top-30 -left-full transform -translate-x-1/2 transition-all duration-500 ${showMenu ? "left-1/2" : ""}`}
         >
-          <li>
+          <li
+        
+            >
+           
             <Link
               to="/"
               className="font-semibold tracking-wider text-orange-500 scroll-smooth"
