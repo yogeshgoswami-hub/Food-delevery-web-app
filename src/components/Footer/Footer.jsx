@@ -8,9 +8,9 @@ function Footer() {
     <footer className="bg-zinc-100  md:py-1 pt-10 ">
       <div className="max-w-[1400px]  mx-auto md:flex items-center md:justify-around text-start md:m-10 ">
         <div className=" flex-col items-center text-center md:text-start">
-          <Link to="/" className="text-3xl font-bold">
+          <a href="#Header" className="text-3xl font-bold">
             Quick<span className="text-orange-500">B</span>asket
-          </Link>
+          </a>
           <p className="my-5 ">
             Bred for high content of benificial substances.<br/> Our products are all
             fresh and healthy.

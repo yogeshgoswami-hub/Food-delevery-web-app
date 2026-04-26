@@ -8,7 +8,7 @@ const Aboutus = () => {
           Welcome to Quick<span className="text-orange-500">B</span>asket😋
         </h1>
         <p className="md:text-lg text-zinc-700 justify-center text-center ">
-          Welcome to <Link to="/" className="cursor-pointer">QuickBasket😋</Link>, your one-stop
+          Welcome to <Link to="#Header" className="cursor-pointer">QuickBasket😋</Link>, your one-stop
           destination for fresh groceries and everyday essentials. We are
           dedicated to providing a seamless and convenient shopping experience
           right from the comfort of your home. At QuickBasket, quality and

@@ -27,7 +27,8 @@ const Navbar = () => {
     <header
       className={`bg-white fixed top-0 right-0 left-0 z-50 ${isScrolled ? "shadow-2xl to-black" : null}`}
     >
-      <nav className="max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center">
+      <nav className="max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center" id="
+      #Header">
         {/* logo */}
         <Link to="/" className="text-3xl font-bold">
           Quick<span className="text-orange-500">B</span>asket
