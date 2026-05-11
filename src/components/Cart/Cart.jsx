@@ -3,60 +3,61 @@ import { createContext, useContext, useState } from "react";
 
 const CartContext = createContext();
 
-  const useCart = () => useContext(CartContext);
+const useCart = () => useContext(CartContext);
 
-  const CartProvider = ({ children }) => {
-    const [cart, setCart] = useState([]);
+const CartProvider = ({ children }) => {
+  const [cart, setCart] = useState([]);
+  const [name, setName] = useState("choose any items");
+  // ✅ ADD TO CART
+  const addToCart = (product) => {
+    const exist = cart.find((item) => item.id === product.id);
 
-    // ✅ ADD TO CART
-    const addToCart = (product) => {
-      const exist = cart.find((item) => item.id === product.id);
-
-      if (exist) {
-        setCart(
-          cart.map((item) =>
-            item.id === product.id
-              ? { ...item, quantity: item.quantity + 1 }
-              : item,
-          ),
-        );
-      } else {
-        setCart([...cart, { ...product, quantity: 1 }]);
-      }
-    };
-
-    // ❌ REMOVE ITEM
-    const removeFromCart = (id) => {
-      setCart(cart.filter((item) => item.id !== id));
-    };
-
-    // ➕ INCREASE
-    const increaseQty = (id) => {
+    if (exist) {
       setCart(
         cart.map((item) =>
-          item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
-        ),
-      );
-    };
-
-    // ➖ DECREASE
-    const decreaseQty = (id) => {
-      setCart(
-        cart.map((item) =>
-          item.id === id && item.quantity > 1
-            ? { ...item, quantity: item.quantity - 1 }
+          item.id === product.id
+            ? { ...item, quantity: item.quantity + 1 }
             : item,
         ),
       );
-    };
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+  };
 
-    // 💰 TOTAL PRICE
-    const totalPrice = cart.reduce(
-      (total, item) => total + item.price * item.quantity,
-      0,
+  // ❌ REMOVE ITEM
+  const removeFromCart = (id) => {
+    setCart(cart.filter((item) => item.id !== id));
+  };
+
+  // ➕ INCREASE
+  const increaseQty = (id) => {
+    setCart(
+      cart.map((item) =>
+        item.id === id ? { ...item, quantity: item.quantity + 1 } : item,
+      ),
     );
+  };
 
-    return (
+  // ➖ DECREASE
+  const decreaseQty = (id) => {
+    setCart(
+      cart.map((item) =>
+        item.id === id && item.quantity > 1
+          ? { ...item, quantity: item.quantity - 1 }
+          : item,
+      ),
+    );
+  };
+
+  // 💰 TOTAL PRICE
+  const totalPrice = cart.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0,
+  );
+
+  return (
+    <div className="bg-amber-400">
       <CartContext.Provider
         value={{
           cart,
@@ -68,9 +69,11 @@ const CartContext = createContext();
         }}
       >
         {children}
-        <div><h1>your cart is empty</h1></div>
+        <div>
+          <h1>your cart is empty</h1>
+        </div>
       </CartContext.Provider>
-    );
-
-  };
+    </div>
+  );
+};
 export default useCart;

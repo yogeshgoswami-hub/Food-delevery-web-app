@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 const Signinup = () => {
   const [isSignup, setSignup] = useState(false);
   const [user, setUser] = useState({ email: "", password: "" });
- 
 
   return (
     <div className="md:m-20 my-20 md:mx-12 px-10 py-10 text-center items-center justify-center text-3xl">
@@ -45,10 +44,7 @@ const Signinup = () => {
           </div>
           <br />
 
-          <div
-            className="md:text-2xl text-xl -mb-10 mb-1  -mt-4  w-full"
-            
-          >
+          <div className="md:text-2xl text-xl -mb-10 mb-1  -mt-4  w-full">
             <Button content={isSignup ? "Sign Up" : "Login"} />
           </div>
           <br />

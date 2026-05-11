@@ -12,10 +12,11 @@ const Contect = () => {
         <h1 className="text-zinc-900 bg-zinc-100 rounded-2xl p-2  font-bold text-4xl justify-center text-center z-10 ">
           Contact us
         </h1>
+        <div></div>
       </div>
       <div className="bg-zinc-200">
-        <div className="bg-amber-300 px-10 py-1">
-          {/* <h1 className="text-2xl text-zinc-800 pb-1 font-bold">Contact Support</h1>
+        <div className="bg-amber-500 mb-10 pb-122"></div>
+        {/* <h1 className="text-2xl text-zinc-800 pb-1 font-bold">Contact Support</h1>
           <div className="">
             <div className="text-xl flex  ">
               <FaPhoneSquareAlt />
@@ -25,7 +26,6 @@ const Contect = () => {
               <MdEmail /><h4></h4>
             </div>
           </div> */}
-        </div>
       </div>
     </div>
   );
