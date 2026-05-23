@@ -42,7 +42,6 @@ const Navbar = () => {
   const toggleicon = () => {
     icon(!showicon);
   };
-  console.log(search);
   const [showMenu, setMenu] = useState(false);
   const [isScrolled, setisScrolled] = useState(false);
   const toggleMenu = () => {
