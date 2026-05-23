@@ -7,10 +7,42 @@ import { FaUserCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Aboutus from "../Aboutus/Aboutus";
 const Navbar = () => {
+  const [search, setSearch] = useState("");
+  const Data = [
+    "strawberry",
+    "butter",
+    "eggs",
+    "cabbage",
+    "eggplant",
+    "shrimp",
+    "kiwi",
+    "capsicum",
+    "broccoli",
+    "yogurt",
+    "beef",
+    "chickenbreast",
+    "kale",
+    "cheese",
+    "condensedmilk",
+    "salmon",
+    "banana",
+    "milk",
+    "pineapple",
+    "tofu",
+    "tilapia",
+    "slicecheese",
+    "ricottacheese",
+    "grapes",
+    "lettuce",
+  ];
+  const filtered = Data.filter((item) =>
+    item.toLowerCase().includes(search.toLowerCase()),
+  );
   const [icon, showicon] = useState(true);
   const toggleicon = () => {
     icon(!showicon);
   };
+  console.log(search);
   const [showMenu, setMenu] = useState(false);
   const [isScrolled, setisScrolled] = useState(false);
   const toggleMenu = () => {
@@ -27,8 +59,11 @@ const Navbar = () => {
     <header
       className={`bg-white fixed top-0 right-0 left-0 z-50 ${isScrolled ? "shadow-2xl to-black" : null}`}
     >
-      <nav className="max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center" id="
-      #Header">
+      <nav
+        className="max-w-[1400px] mx-auto px-10 md:h-[14vh] h-[12vh] flex justify-between items-center"
+        id="
+      #Header"
+      >
         {/* logo */}
         <Link to="/" className="text-3xl font-bold">
           Quick<span className="text-orange-500">B</span>asket
@@ -74,15 +109,41 @@ const Navbar = () => {
         {/* Nav action */}
         <div className="flex items-center gap-x-5">
           {/* input feild */}
-          <div className="md:flex p-1 border-2 border-orange-500 rounded-full hidden">
+          <div className="md:flex p-1 border-2 border-orange-500 rounded-full hidden relative">
             <input
               type="text"
               name="text"
+              value={search}
               id="text"
+              onChange={(e) => {
+                console.log(e.target.value);
+                setSearch(e.target.value);
+              }}
               placeholder="search..."
               autoComplete="off"
               className="flex-1 h-[5vh] px-3 focus:outline-none"
             />
+            <div
+              className="absolute top-full left-0 w-full bg-white shadow-lg rounded-md mt-2 z-50 max-h-60 overflow-y-auto"
+              style={{ marginTop: "10px" }}
+            >
+              {search.trim() !== "" &&
+                filtered.length > 0 &&
+                filtered.map((item, index) => (
+                  <div
+                    key={index}
+                    style={{
+                      padding: "5px",
+                      cursor: "pointer",
+                    }}
+                    onClick={() => setSearch(item)}
+                    className="p-2 hover:bg-orange-300 transition-all duration-150 cursor-pointer"
+                  >
+                    {item}
+                  </div>
+                ))}
+            </div>
+
             <button className="bg-orange-500 text-white w-10 h-9 flex justify-center items-center rounded-full text-xl">
               <IoSearchSharp />
             </button>
@@ -109,16 +170,13 @@ const Navbar = () => {
         </div>
 
         {/* mobile menu */}
-        <ul    onClick=
-            {() => {
-              toggleMenu(true);
-            }}
+        <ul
+          onClick={() => {
+            toggleMenu(true);
+          }}
           className={`flex flex-col gap-y-12 bg-orange-500/15 backdrop-blur-xl shadow-xl rounded-xl p-10 items-center gap-x-15 md:hidden absolute top-30 -left-full transform -translate-x-1/2 transition-all duration-500 ${showMenu ? "left-1/2" : ""}`}
         >
-          <li
-        
-            >
-           
+          <li>
             <Link
               to="/"
               className="font-semibold tracking-wider text-orange-500 scroll-smooth"
@@ -163,7 +221,9 @@ const Navbar = () => {
               type="text"
               name="text"
               id="text"
+              value={search}
               placeholder="search..."
+              onChange={(e) => setSearch(e.target.value)}
               autoComplete="off"
               className="flex-1 h-[5vh] px-3 focus:outline-none"
             />
@@ -178,3 +238,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+// const filtered =Data.filter(item =>item.lower().includes(search.))
